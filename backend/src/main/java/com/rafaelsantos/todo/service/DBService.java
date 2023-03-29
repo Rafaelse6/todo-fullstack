@@ -12,16 +12,25 @@ import com.rafaelsantos.todo.repository.TodoRepository;
 
 @Service
 public class DBService {
-	
+
 	@Autowired
 	private TodoRepository repository;
-	
+
 	public void instanciaBaseDeDados() {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
 		Todo t1 = new Todo(null, "Estudar", "Estudar Spring Boot 2 e Angular 11",
 				LocalDateTime.parse("25/03/2022 10:40", formatter), false);
 
-		repository.saveAll(Arrays.asList(t1));
+		Todo t2 = new Todo(null, "Ler", "Ler livros de desenvolvimento pessoal",
+				LocalDateTime.parse("22/03/2021 13:00", formatter), true);
+
+		Todo t3 = new Todo(null, "Exercicios", "Praticar exercicios fisicos",
+				LocalDateTime.parse("21/03/2022 10:15", formatter), false);
+
+		Todo t4 = new Todo(null, "Meditar", "Meditar durante 40 minutos pela manhã",
+				LocalDateTime.parse("27/03/2022 05:40", formatter), true);
+
+		repository.saveAll(Arrays.asList(t1, t2, t3, t4));
 	}
 }
