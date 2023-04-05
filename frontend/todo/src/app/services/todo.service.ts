@@ -22,11 +22,15 @@ export class TodoService {
     return this.http.put<Todo>(url, todo);
   }
 
+  create(todo: Todo): Observable<Todo> {
+    return this.http.post<Todo>(this.baseUrl, todo);
+  }
+
   delete(id: any): Observable<void> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<void>(url);
   }
-
+  
   message(msg: String): void {
     this.snack.open(`${msg}`, "OK", {
       horizontalPosition: "end",
