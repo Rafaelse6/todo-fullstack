@@ -1,10 +1,20 @@
 <div class="container">
-
   <div class="badge">
-    <button mat-stroked-button color="primary" matBadge="{{ closed }}">Tasks Finalizadas</button>
+    <button
+      (click)="navegarParaFinalizados()"
+      mat-stroked-button
+      color="primary"
+      matBadge="{{ closed }}"
+    >
+      Tasks finalizadas
+    </button>
   </div>
-
-  <button class="novo-todo mat-elevation-z8" mat-stroked-button color="primary">
+  <button
+    routerLink="create"
+    class="novo-todo mat-elevation-z8"
+    mat-stroked-button
+    color="primary"
+  >
     NOVO TO-DO
   </button>
 
@@ -17,10 +27,10 @@
       </mat-card-header>
 
       <div class="actions">
-        <button mat-mini-fab color="primary">
+        <button (click)="finalizar(item)" mat-mini-fab color="primary">
           <mat-icon>done</mat-icon>
         </button>
-        <button mat-mini-fab color="accent">
+        <button routerLink="update/{{ item.id }}" mat-mini-fab color="accent">
           <mat-icon>edit</mat-icon>
         </button>
         <button (click)="delete(item.id)" mat-mini-fab color="warn">
