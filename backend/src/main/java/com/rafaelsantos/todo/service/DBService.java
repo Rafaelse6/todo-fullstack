@@ -27,7 +27,7 @@ public class DBService {
 				sdf.parse("22/03/2021"), true);
 
 		Todo t3 = new Todo(null, "Exercicios", "Praticar exercicios fisicos",
-				sdf.parse("21/03/2022"), true);
+				sdf.parse("21/03/2022"), false);
 
 		Todo t4 = new Todo(null, "Meditar", "Meditar durante 40 minutos pela manhã",
 				sdf.parse("27/03/2022"), true);
