@@ -16,11 +16,12 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatBadgeModule } from "@angular/material/badge";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
-import { FinalizadosComponent } from './components/finalizados/finalizados.component';
-import { CreateComponent } from './components/create/create.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { FinalizadosComponent } from "./components/finalizados/finalizados.component";
+import { CreateComponent } from "./components/create/create.component";
+import { MatInputModule } from "@angular/material/input";
+import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
+import { UpdateComponent } from "./components/update/update.component";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatNativeDateModule } from "@angular/material/core";
     ReadAllComponent,
     FinalizadosComponent,
     CreateComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,7 @@ import { MatNativeDateModule } from "@angular/material/core";
     FormsModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

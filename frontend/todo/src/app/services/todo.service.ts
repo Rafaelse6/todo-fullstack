@@ -17,6 +17,11 @@ export class TodoService {
     return this.http.get<Todo[]>(this.baseUrl);
   }
 
+  findById(id: any): Observable<Todo> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<Todo>(url);
+  }
+
   update(todo: Todo): Observable<Todo> {
     const url = `${this.baseUrl}/${todo.id}`;
     return this.http.put<Todo>(url, todo);
@@ -30,7 +35,7 @@ export class TodoService {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<void>(url);
   }
-  
+
   message(msg: String): void {
     this.snack.open(`${msg}`, "OK", {
       horizontalPosition: "end",
